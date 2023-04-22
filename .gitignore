@@ -7,4 +7,4 @@
 *.bcf
 *.out
 *.txt
-*.zip
+__pycache__/*
