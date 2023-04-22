@@ -48,14 +48,13 @@ def read_document(filename, voc):
 # documents.  This need to be extended to compute similar
 # representations for the validation and the test set.
 voc = load_vocabulary("vocabulary.txt")
-print(type(voc))
 documents = []
 labels = []
-for f in os.listdir("smalltrain/pos"):
-    documents.append(read_document("smalltrain/pos/" + f, voc))
+for f in os.listdir("data/smalltrain/pos"):
+    documents.append(read_document("data/smalltrain/pos/" + f, voc))
     labels.append(1)
-for f in os.listdir("smalltrain/neg"):
-    documents.append(read_document("smalltrain/neg/" + f, voc))
+for f in os.listdir("data/smalltrain/neg"):
+    documents.append(read_document("data/smalltrain/neg/" + f, voc))
     labels.append(0)
 # np.stack transforms the list of vectors into a 2D array.
 X = np.stack(documents)
@@ -64,3 +63,4 @@ Y = np.array(labels)
 # array of features so that it can be passed to np.savetxt.
 data = np.concatenate([X, Y[:, None]], 1)
 np.savetxt("train.txt.gz", data)
+print(data)

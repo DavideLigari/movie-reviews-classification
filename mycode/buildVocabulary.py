@@ -31,7 +31,14 @@ def write_vocabulary(voc, filename, n):
     f.close()
 
 
-def get_vocabulary(path, save=False, n=1000):
+def getWords(voc, n):
+    words = []
+    for word, count in sorted(voc.most_common(n)):
+        words.append(word)
+    return words
+
+
+def getVocabulary(path='data/smalltrain', numWords=1000, save=False):
     # The script reads all the documents in the smalltrain directory, uses
     # the to form a vocabulary, writes it to the 'vocabulary.txt' file.
     voc = collections.Counter()
@@ -40,5 +47,5 @@ def get_vocabulary(path, save=False, n=1000):
     for f in os.listdir(path+"/neg"):
         voc.update(read_document(path+"/neg/" + f))
     if save:
-        write_vocabulary(voc, "vocabulary.txt", 1000)
-    return sorted(voc.most_common(n))
+        write_vocabulary(voc, "vocabulary.txt", numWords)
+    return getWords(voc, numWords)

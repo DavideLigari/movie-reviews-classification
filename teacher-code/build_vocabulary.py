@@ -34,8 +34,8 @@ def write_vocabulary(voc, filename, n):
 # The script reads all the documents in the smalltrain directory, uses
 # the to form a vocabulary, writes it to the 'vocabulary.txt' file.
 voc = collections.Counter()
-for f in os.listdir("smalltrain/pos"):
-    voc.update(read_document("smalltrain/pos/" + f))
-for f in os.listdir("smalltrain/neg"):
-    voc.update(read_document("smalltrain/neg/" + f))
+for f in os.listdir("data/smalltrain/pos"):
+    voc.update(read_document("data/smalltrain/pos/" + f))
+for f in os.listdir("data/smalltrain/neg"):
+    voc.update(read_document("data/smalltrain/neg/" + f))
 write_vocabulary(voc, "vocabulary.txt", 1000)

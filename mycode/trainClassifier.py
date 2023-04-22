@@ -22,34 +22,36 @@ def inference_nb(X, w, b):
     return (logits > 0).astype(int)
 
 
-# The script loads the training data and train a classifier.  It must
-# be extended to evaluate the classifier on the test set.
-def train(data):
+def train_classifier(data):
     X = data[:, :-1]
     Y = data[:, -1]
     w, b = train_nb(X, Y)
     return w, b
 
 
-def getAccuracy(data, w, b):
+def inference_classifier(data, w, b):
     X = data[:, :-1]
     Y = data[:, -1]
     predictions = inference_nb(X, w, b)
     accuracy = (predictions == Y).mean()
-    return accuracy*100
+    return predictions, accuracy*100
+
 
 # This part detects the most relevant words for the classifier.
+def get_most_relevant_words(w, voc, data):
+    f = open("vocabulary.txt")
+    voc = f.read().split()
+    f.close()
+    X = data[:, :-1]
+    Y = data[:, -1]
+    indices = w.argsort()
+    positive_words = []
+    negative_words = []
+#  NEGATIVE WORDS
+    for i in indices[:20]:
+        negative_words[voc[i], w[i]]
 
-# f = open("vocabulary.txt")
-# voc = f.read().split()
-# f.close()
-
-# indices = w.argsort()
-# print("NEGATIVE WORDS")
-# for i in indices[:20]:
-#     print(voc[i], w[i])
-
-# print()
-# print("POSITIVE WORDS")
-# for i in indices[-20:]:
-#     print(voc[i], w[i])
+# POSITIVE WORDS
+    for i in indices[-20:]:
+        positive_words[voc[i], w[i]]
+    return positive_words, negative_words
