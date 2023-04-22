@@ -17,9 +17,9 @@ def train_nb(X, Y):
 
 
 def inference_nb(X, w, b):
-    """Prediction of a binary NB classifier."""
+    """probability to be positive"""
     logits = X @ w + b
-    return (logits > 0).astype(int)
+    return logits
 
 
 def train_classifier(data):
@@ -32,9 +32,10 @@ def train_classifier(data):
 def inference_classifier(data, w, b):
     X = data[:, :-1]
     Y = data[:, -1]
-    predictions = inference_nb(X, w, b)
+    logits = inference_nb(X, w, b)
+    predictions = (logits > 0).astype(int)
     accuracy = (predictions == Y).mean()
-    return predictions, accuracy*100
+    return logits, predictions, accuracy*100
 
 
 # This part detects the most relevant words for the classifier.
