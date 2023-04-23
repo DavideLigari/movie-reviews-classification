@@ -1,4 +1,4 @@
-,iterations,types,test_accuracy,train_accuracy
+,Vocabulary size,types,test_accuracy,train_accuracy
 0,250,classic model,74.624,75.144
 1,500,classic model,79.848,80.136
 2,750,classic model,80.768,81.08
