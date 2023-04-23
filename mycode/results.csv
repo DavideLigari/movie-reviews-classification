@@ -1,21 +1,77 @@
-iterations,Model with stemming,Model with stemming and without common words,Model without common words,classic model
-250,75.064,74.136,74.232,74.624
-500,80.384,80.44,80.752,79.848
-750,81.32000000000001,81.608,81.528,80.768
-1000,81.64,81.8,82.136,81.632
-1250,81.976,82.08800000000001,82.52000000000001,81.928
-1500,82.056,82.312,82.624,82.184
-1750,81.888,82.06400000000001,82.696,82.392
-2000,82.048,82.416,82.8,82.536
-2250,82.248,82.472,82.848,82.704
-2500,82.336,82.616,83.06400000000001,82.872
-2750,82.408,82.536,83.06400000000001,82.968
-3000,82.384,82.72,83.368,82.94399999999999
-3250,82.49600000000001,82.704,83.416,82.904
-3500,82.632,82.632,83.43199999999999,83.024
-3750,82.67999999999999,82.712,83.32000000000001,83.056
-4000,82.624,82.72,83.232,83.096
-4250,82.552,82.584,83.2,83.12
-4500,82.336,82.45599999999999,83.368,83.016
-4750,82.176,82.336,83.28,82.91199999999999
-5000,82.048,82.288,83.128,82.76
+,iterations,types,test_accuracy,train_accuracy
+0,250,classic model,74.624,75.144
+1,500,classic model,79.848,80.136
+2,750,classic model,80.768,81.08
+3,1000,classic model,81.632,82.004
+4,1250,classic model,81.928,82.66
+5,1500,classic model,82.184,82.88
+6,1750,classic model,82.392,83.136
+7,2000,classic model,82.536,83.304
+8,2250,classic model,82.704,83.67599999999999
+9,2500,classic model,82.872,83.864
+10,2750,classic model,82.968,83.97200000000001
+11,3000,classic model,82.94399999999999,84.076
+12,3250,classic model,82.904,84.16799999999999
+13,3500,classic model,83.024,84.38
+14,3750,classic model,83.056,84.54
+15,4000,classic model,83.096,84.6
+16,4250,classic model,83.12,84.732
+17,4500,classic model,83.016,84.828
+18,4750,classic model,82.91199999999999,84.86
+19,250,Model without common words,74.232,74.072
+20,500,Model without common words,80.752,80.44
+21,750,Model without common words,81.528,81.536
+22,1000,Model without common words,82.136,82.696
+23,1250,Model without common words,82.52000000000001,83.39999999999999
+24,1500,Model without common words,82.624,83.792
+25,1750,Model without common words,82.696,84.112
+26,2000,Model without common words,82.8,84.288
+27,2250,Model without common words,82.848,84.536
+28,2500,Model without common words,83.06400000000001,84.768
+29,2750,Model without common words,83.06400000000001,85.2
+30,3000,Model without common words,83.368,85.224
+31,3250,Model without common words,83.416,85.512
+32,3500,Model without common words,83.43199999999999,85.744
+33,3750,Model without common words,83.32000000000001,85.832
+34,4000,Model without common words,83.232,85.992
+35,4250,Model without common words,83.2,86.11999999999999
+36,4500,Model without common words,83.368,86.136
+37,4750,Model without common words,83.28,86.288
+38,250,Model with stemming,75.064,75.264
+39,500,Model with stemming,80.384,80.28800000000001
+40,750,Model with stemming,81.32000000000001,81.408
+41,1000,Model with stemming,81.64,81.92
+42,1250,Model with stemming,81.976,82.44
+43,1500,Model with stemming,82.056,82.8
+44,1750,Model with stemming,81.888,83.0
+45,2000,Model with stemming,82.048,83.04
+46,2250,Model with stemming,82.248,83.328
+47,2500,Model with stemming,82.336,83.832
+48,2750,Model with stemming,82.408,83.952
+49,3000,Model with stemming,82.384,83.88
+50,3250,Model with stemming,82.49600000000001,84.112
+51,3500,Model with stemming,82.632,84.14399999999999
+52,3750,Model with stemming,82.67999999999999,84.184
+53,4000,Model with stemming,82.624,84.39999999999999
+54,4250,Model with stemming,82.552,84.48
+55,4500,Model with stemming,82.336,84.624
+56,4750,Model with stemming,82.176,84.72800000000001
+57,250,Model with stemming and without common words,74.136,73.92800000000001
+58,500,Model with stemming and without common words,80.44,80.22399999999999
+59,750,Model with stemming and without common words,81.608,81.464
+60,1000,Model with stemming and without common words,81.8,82.14399999999999
+61,1250,Model with stemming and without common words,82.08800000000001,82.736
+62,1500,Model with stemming and without common words,82.312,83.14399999999999
+63,1750,Model with stemming and without common words,82.06400000000001,83.392
+64,2000,Model with stemming and without common words,82.416,83.504
+65,2250,Model with stemming and without common words,82.472,84.06400000000001
+66,2500,Model with stemming and without common words,82.616,84.16799999999999
+67,2750,Model with stemming and without common words,82.536,84.272
+68,3000,Model with stemming and without common words,82.72,84.328
+69,3250,Model with stemming and without common words,82.704,84.624
+70,3500,Model with stemming and without common words,82.632,85.032
+71,3750,Model with stemming and without common words,82.712,85.048
+72,4000,Model with stemming and without common words,82.72,85.104
+73,4250,Model with stemming and without common words,82.584,85.096
+74,4500,Model with stemming and without common words,82.45599999999999,85.232
+75,4750,Model with stemming and without common words,82.336,85.272
