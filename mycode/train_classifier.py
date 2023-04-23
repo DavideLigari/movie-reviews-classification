@@ -38,21 +38,16 @@ def inference_classifier(data, w, b):
     return logits, predictions, accuracy*100
 
 
-# This part detects the most relevant words for the classifier.
-def get_most_relevant_words(w, voc, data):
-    f = open("vocabulary.txt")
-    voc = f.read().split()
-    f.close()
-    X = data[:, :-1]
-    Y = data[:, -1]
+def get_most_relevant_words(w, voc, num_words=20):
+    """Return the most relevant words for the classifier."""
     indices = w.argsort()
     positive_words = []
     negative_words = []
 #  NEGATIVE WORDS
-    for i in indices[:20]:
-        negative_words[voc[i], w[i]]
+    for i in indices[:num_words]:
+        negative_words.append(voc[i], w[i])
 
 # POSITIVE WORDS
-    for i in indices[-20:]:
-        positive_words[voc[i], w[i]]
+    for i in indices[-num_words:]:
+        positive_words.append(voc[i], w[i])
     return positive_words, negative_words

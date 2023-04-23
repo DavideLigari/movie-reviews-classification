@@ -57,29 +57,40 @@ def read_document_stemming(filename, voc):
     return bow
 
 
-def get_bow_representation(words, path='../data/smalltrain/', save=False, stemming=False):
+def get_bow_representation(words, path='../data/smalltrain/', save=False, stemming=False, get_file_names=False):
     """Read all documents and return the BoW representation, as well as the kind of each document (positive or negative)."""
     voc = words_to_dict(words)
     documents = []
     labels = []
+    file_names = []
     if stemming:
         for f in os.listdir(path+"/pos"):
             documents.append(read_document_stemming(path+"/pos/" + f, voc))
             labels.append(1)
+            file_names.append(f)
         for f in os.listdir(path+"/neg"):
             documents.append(read_document_stemming(path+"/neg/" + f, voc))
             labels.append(0)
+            file_names.append(f)
+
     else:
         for f in os.listdir(path+"/pos"):
             documents.append(read_document(path+"/pos/" + f, voc))
             labels.append(1)
+            file_names.append(f)
+
         for f in os.listdir(path+"/neg"):
             documents.append(read_document(path+"/neg/" + f, voc))
             labels.append(0)
+            file_names.append(f)
+
     # np.stack transforms the list of vectors into a 2D array.
     X = np.stack(documents)
     Y = np.array(labels)
     data = np.concatenate([X, Y[:, None]], 1)
     if save:
         np.savetxt("train.txt.gz", data)
+    if get_file_names:
+        return data, np.array(file_names)
+
     return data
