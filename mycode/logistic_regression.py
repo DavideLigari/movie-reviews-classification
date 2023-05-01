@@ -14,8 +14,9 @@ def cross_entropy(P, Y):
     return (-Y * np.log(P) - (1 - Y) * np.log(1-P)).mean()
 
 
-def logreg_train(data, steps=10000, lr=0.01):
+def logreg_train(data, steps=10000, lr=0.01, batch_size=2000):
     """Train a logistic regression classifier."""
+
     X = data[:, :-1]
     Y = data[:, -1]
     m, n = X.shape
@@ -24,15 +25,19 @@ def logreg_train(data, steps=10000, lr=0.01):
     accs = []
     losses = []
     for step in range(steps):
-        P = logreg_inference(X, w, b)
-        if step % 1000 == 0:
-            loss = cross_entropy(P, Y)
+        index = np.random.choice(data.shape[0], batch_size, replace=False)
+        newX = X[index]
+        newY = Y[index]
+        P = logreg_inference(newX, w, b)
+        if step % 10000 == 0:
+            loss = cross_entropy(P, newY)
             prediction = (P > 0.5)
-            accuracy = (prediction == Y).mean()
+            accuracy = (prediction == newY).mean()
             accs.append(accuracy)
             losses.append(loss)
-        grad_w = ((P - Y) @ X) / m
-        grad_b = (P - Y).mean()
+            print(step)
+        grad_w = ((P - newY) @ newX) / batch_size
+        grad_b = (P - newY).mean()
         w -= lr * grad_w
         b -= lr * grad_b
     return w, b, accs, losses

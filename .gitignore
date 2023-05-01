@@ -9,3 +9,6 @@
 *.txt
 __pycache__/*
 *.zip
+*.toc
+*.bbl
+*.blg
