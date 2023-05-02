@@ -103,13 +103,13 @@
 % Page setup
 \setlength{\hoffset}{-1in}
 \setlength{\voffset}{-1in}
-\setlength{\oddsidemargin}{2cm}
-\setlength{\evensidemargin}{2cm}
-\setlength{\topmargin}{0.7cm}
+\setlength{\oddsidemargin}{1.5cm}
+\setlength{\evensidemargin}{1.5cm}
+\setlength{\topmargin}{0.4cm}
 \setlength{\headheight}{2.3cm}
-\setlength{\headsep}{0.3cm}
+\setlength{\headsep}{0.2cm}
 \setlength{\textheight}{25.7cm}
-\setlength{\textwidth}{17.5cm}
+\setlength{\textwidth}{18.5cm}
 \setlength{\footskip}{2.0cm}
 \setlength{\columnsep}{0.5cm}
 
@@ -144,6 +144,7 @@
 \def\titulo#1{\gdef\@titulo{#1}}
 \def\shorttitle#1{\gdef\@theshorttitle{#1}}
 \def\firstauthor#1{\gdef\@thefirstauthor{#1}}
+
 \newcommand*{\authorheader}{%
   \begingroup
   \ifnum\value{authors}<4 % One author
@@ -273,6 +274,7 @@
 \fancyhead[L]{\vcenteredinclude{images/logo.png}}
 \fancyhead[C]{{\fontsize{7}{10} \selectfont \MakeUppercase{\@theshorttitle}}}
 \fancyhead[R]{{\fontsize{7}{10} \selectfont \authorheader}}
+\fancyfoot[C]{\thepage}
 
 % Section Format Settings
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.~}
