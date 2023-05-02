@@ -111,8 +111,8 @@ The model appears to give importance to words that do not necessarily carry a cl
 \end{figure}
 
 \subsection{Worst errors on the test set}
-In the Figure \ref{fig-3}, are shown the 20 reviews that are misclassified with an higher confidence,
-their predicted value was too far to their actual class
+In Figure \ref{fig-3}, are presented the 20 reviews that were misclassified with high confidence.
+These reviews were predicted to belong to a class that was different from their actual class.
 \begin{figure}[h]
   \centering
   \includegraphics[width=.5\columnwidth]{images/missclassified.png}
@@ -121,11 +121,9 @@ their predicted value was too far to their actual class
 \end{figure}
 
 \section{Logistic regression}
-For completeness, the Logistic regression model has been trained and compared to the Naive Bayes classifier.
-In order to reduce the training time, mini-batch gradient decent has been used, instead of the batch one.
-It results that logistic regression performs quite better than Naive Bayes model, since it has a train accuracy around to 88.976\%, and a test one of 85.928\% .
-The Figure \ref{fig-4} shows the most meaningful words, and it can be noticed that most of them are equal to the Naive Bayes classifier,
-but the weights are really different, the Naive Bayes assign higher weights.
+Also a logistic regression model has been trained and compared to the Naive Bayes classifier. To reduce training time, it is employed mini-batch gradient descent instead of batch gradient descent.
+Our results indicate that the logistic regression model slightly outperformed the Naive Bayes model, achieving a train accuracy of approximately 88.976\% and a test accuracy of 85.928\%.
+Figure \ref{fig-4} shows the most significant words, which are similar to those identified by the Naive Bayes classifier, but with different weights assigned to them.
 \begin{figure}[h]
   \centering
   \includegraphics[width=.5\columnwidth]{images/lrwords.png}
