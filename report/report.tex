@@ -76,12 +76,7 @@ while a vocabulary that is too large may include irrelevant words that negativel
 When the vocabulary size is too large, the model may assign a high weight to meaningless words, which can reduce its ability to identify the most relevant ones.\newline
 However, as shown in Figure \ref{fig-1}, increasing the vocabulary size can improve the test accuracy of the model, up to a certain point.
 In this study, the maximum test accuracy of approximately 0.83 was achieved for a vocabulary size of 2000 words.
-\begin{figure}[b]
-  \centering
-  \includegraphics[width=.7\columnwidth]{images/modelComp.png}
-  \caption{Comparison of the models for different vocabulary sizes}
-  \label{fig-1}
-\end{figure}
+
 \subsection{Variants comparison}
 The results presented in Figure \ref{fig-1} demonstrate that the model without the most common words achieves a higher accuracy compared to the other two models.
 Specifically, the model using the whole vocabulary shows a lower accuracy than the model without the most common words.
@@ -90,6 +85,12 @@ These findings suggest that removing the most common words from the vocabulary h
 while stemming can have a slightly negative effect.
 One possible explanation for these results is that the most common words in the dataset may not carry much semantic meaning and can introduce noise into the model.
 On the other hand, stemming can potentially remove important distinctions between words and reduce the model's ability to differentiate between them.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.8\columnwidth]{images/modelComp.png}
+  \caption{Comparison of the models for different vocabulary sizes}
+  \label{fig-1}
+\end{figure}
 \subsection{Most impactful words}
 Figure \ref{fig-2} displays the most impactful words for the model using a 2000-size vocabulary without the most common words.
 The results show that the model performs well, giving significant importance to adjectives that convey a clear positive or negative sentiment.
@@ -98,42 +99,43 @@ However, when the vocabulary size increases to 5000, the model's performance deg
 The model appears to give importance to words that do not necessarily carry a clear sentiment, leading to a less effective classification.
 
 
-\begin{figure}
-  \centering
-  \begin{subfigure}{.6\linewidth}
-    \centering
+\begin{figure}[h]
+  \begin{subfigure}{.5\linewidth}
     \includegraphics[width=.8\columnwidth]{images/words.png}
-    \caption{}
-    \label{fig:sub1}
   \end{subfigure}%
-  \begin{subfigure}{.6\linewidth}
-    \centering
+  \begin{subfigure}{.5\linewidth}
     \includegraphics[width=.8\columnwidth]{images/words5000.png}
-    \caption{}
-    \label{fig:sub2}
   \end{subfigure}
-  \caption{Most impactful words, for the model without common words, a- vocabulary size =2000, b- vocabulary size =5000}
+  \caption{Most impactful words, for the model without common words,on the left is used vocabulary size =2000, on the right the vocabulary size is equal to 5000}
   \label{fig-2}
 \end{figure}
 
 \subsection{Worst errors on the test set}
+In the Figure \ref{fig-3}, are shown the 20 reviews that are misclassified with an higher confidence,
+their predicted value was too far to their actual class
 \begin{figure}[h]
   \centering
   \includegraphics[width=.5\columnwidth]{images/missclassified.png}
   \caption{Logit for misclassified reviews}
-  \label{fig-4}
+  \label{fig-3}
 \end{figure}
 
 \section{Logistic regression}
+For completeness, the Logistic regression model has been trained and compared to the Naive Bayes classifier.
+In order to reduce the training time, mini-batch gradient decent has been used, instead of the batch one.
+It results that logistic regression performs quite better than Naive Bayes model, since it has a train accuracy around to 88.976\%, and a test one of 85.928\% .
+The Figure \ref{fig-4} shows the most meaningful words, and it can be noticed that most of them are equal to the Naive Bayes classifier,
+but the weights are really different, the Naive Bayes assign higher weights.
 \begin{figure}[h]
   \centering
   \includegraphics[width=.5\columnwidth]{images/lrwords.png}
   \caption{Most meaningful words for logistic regression}
-  \label{fig-5}
+  \label{fig-4}
 \end{figure}
 
-\section{Conclusions}
-
+\section{Declaration}
+I affirm that this report is the result of my own work and that I did not share any part of it with anyone
+else except the teacher.
 %\section{References}
 %Insert bibliographical references (if any) you might have used for your lab activities.
 \end{document}

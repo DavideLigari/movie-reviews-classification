@@ -110,7 +110,7 @@
 \setlength{\headsep}{0.3cm}
 \setlength{\textheight}{25.7cm}
 \setlength{\textwidth}{17.5cm}
-\setlength{\footskip}{1.0cm}
+\setlength{\footskip}{2.0cm}
 \setlength{\columnsep}{0.5cm}
 
 % Author and Affiliate Setup
