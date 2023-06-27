@@ -23,18 +23,6 @@ The goal of this project is to develop a machine learning model that can accurat
 
 The dataset used in this study is Andrew Maas's Large Movie Review Dataset. It consists of 50,000 film reviews labeled as positive or negative. The dataset provides a reliable foundation for training and evaluating the machine learning models.
 
-## Usage
-
-If you wish to use this code or replicate the analysis, please follow these steps:
-
-1. Download the Andrew Maas's Large Movie Review Dataset from [source URL].
-2. Ensure that the necessary dependencies and libraries are installed (provide a list if applicable).
-3. Run the preprocessing script to create the vocabulary and generate the BOW representation.
-4. Train the machine learning models using the generated BOW representation and different preprocessing techniques.
-5. Evaluate the models using appropriate evaluation metrics.
-6. Compare the performance of different classifiers.
-7. Analyze the results and draw conclusions based on the findings.
-
 ## Contact
 
 If you have any questions or suggestions regarding this project, please feel free to contact me via email at davide.ligari01@gmail.com
