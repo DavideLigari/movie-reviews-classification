@@ -1,4 +1,4 @@
-# movie-reviews
+# Movie reviews
 
 This repository contains a comprehensive analysis of the steps taken to develop a machine learning model for classifying film reviews. The analysis focuses on the Andrew Maas's Large Movie Review Dataset, which consists of 50,000 labeled film reviews as either positive or negative.
 
